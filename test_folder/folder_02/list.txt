@@ -1,3 +1,7 @@
 folder_01
 folder_02
-log.txt
+log_cmd1.txt
+log_cmd2.txt
+log_cmd3.txt
+log_cmd4.txt
+log_cmd5.txt

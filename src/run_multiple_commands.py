@@ -82,15 +82,14 @@ def execute_multiple_commands(path_to_commands_txt: str,
         # getting lines as commands
         commands = open_txt_file.readlines()
 
+        # filtering comments (lines starting with #s)
+        commands = [command for command in commands if (not command.startswith('#'))]
+
         # getting total number of commands
         commands_num = len(commands)
 
         # iterating over commands
         for index, command in enumerate(commands, 1):
-
-            # ignoring comments (lines starting with #s)
-            if command.startswith('#'):
-                continue
 
             # removing 'enters' from command
             command = command.replace('\n', '')
@@ -105,7 +104,9 @@ def execute_multiple_commands(path_to_commands_txt: str,
 
             # checking if save info has to be saved
             if log_path is not None:
-                log_add = f' | tee {log_path}'
+                current_command_log_index = f'_cmd{index}.txt'
+                current_log_path = log_path.replace('.txt', current_command_log_index)
+                log_add = f' | tee {current_log_path}'
                 command += log_add
 
             # executing command

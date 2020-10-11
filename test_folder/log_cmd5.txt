@@ -1,0 +1,10 @@
+total 0
+drwxrwxrwx 1 angelo angelo 4096 Oct 11 18:02 .
+drwxrwxrwx 1 angelo angelo 4096 Oct 11 18:01 ..
+drwxrwxrwx 1 angelo angelo 4096 Oct 11 18:02 folder_01
+drwxrwxrwx 1 angelo angelo 4096 Oct 11 18:02 folder_02
+-rwxrwxrwx 1 angelo angelo    0 Oct 11 18:02 log_cmd1.txt
+-rwxrwxrwx 1 angelo angelo    0 Oct 11 18:02 log_cmd2.txt
+-rwxrwxrwx 1 angelo angelo    0 Oct 11 18:02 log_cmd3.txt
+-rwxrwxrwx 1 angelo angelo    0 Oct 11 18:02 log_cmd4.txt
+-rwxrwxrwx 1 angelo angelo    0 Oct 11 18:02 log_cmd5.txt
