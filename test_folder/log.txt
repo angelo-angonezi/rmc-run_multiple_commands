@@ -1,0 +1,23 @@
+total 0
+drwxrwxrwx 1 angelo angelo 4096 Oct 11 10:43 .
+drwxrwxrwx 1 angelo angelo 4096 Oct 11 10:43 ..
+drwxrwxrwx 1 angelo angelo 4096 Oct 11 10:43 folder_01
+drwxrwxrwx 1 angelo angelo 4096 Oct 11 10:43 folder_02
+-rwxrwxrwx 1 angelo angelo    0 Oct 11 10:43 log.txt
+__________________________________________________
+executing command 2 of 6: mkdir ../test_folder/folder_01
+executed command in 0.03 seconds
+__________________________________________________
+executing command 3 of 6: mkdir ../test_folder/folder_02
+executed command in 0.03 seconds
+__________________________________________________
+executing command 4 of 6: touch ../test_folder/folder_01/a_file.txt
+executed command in 0.03 seconds
+__________________________________________________
+executing command 5 of 6: ls > ../test_folder/folder_02/list.txt
+executed command in 0.04 seconds
+__________________________________________________
+executing command 6 of 6: ls -la
+executed command in 0.03 seconds
+__________________________________________________
+all 6 commands executed in 0.16 seconds

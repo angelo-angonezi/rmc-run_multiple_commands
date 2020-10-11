@@ -1,0 +1,6 @@
+# commands file example
+mkdir ../test_folder/folder_01
+mkdir ../test_folder/folder_02
+touch ../test_folder/folder_01/a_file.txt
+ls > ../test_folder/folder_02/list.txt
+ls -la

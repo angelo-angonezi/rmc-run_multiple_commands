@@ -40,6 +40,12 @@ def get_args_dict() -> dict:
                         help='defines whether or not to require "enter" inputs from user between commands',
                         required=False)
 
+    parser.add_argument('-l', '--log',
+                        dest='log',
+                        help='defines whether or not to save log info, and save path to log info.',
+                        required=False,
+                        default=None)
+
     # creating arguments dictionary
     args_dict = vars(parser.parse_args())
 
@@ -52,13 +58,16 @@ def get_args_dict() -> dict:
 
 
 def execute_multiple_commands(path_to_commands_txt: str,
-                              enter_param: bool) -> None:
+                              enter_param: bool,
+                              log_path: str or None
+                              ) -> None:
     """
     Given a path to a txt file containing multiple commands (one command per line),
     executes each command sequentially using python os.system function.
     :param path_to_commands_txt: String. Represents a path to a txt file.
     :param enter_param: Boolean. Defines whether or not to require an 'enter' input
     from user between commands execution.
+    :param log_path: String or None. Represents path to save an execution log file.
     :return: None.
     """
     # defining spacer string
@@ -93,6 +102,11 @@ def execute_multiple_commands(path_to_commands_txt: str,
             print(spacer)
             f_string = f'executing command {index} of {commands_num}: {command}'
             print(f_string)
+
+            # checking if save info has to be saved
+            if log_path is not None:
+                log_add = f' | tee {log_path}'
+                command += log_add
 
             # executing command
             system(command)
@@ -134,9 +148,13 @@ def main():
     # getting enter input requirement parameter
     enter_param = args_dict['enter']
 
+    # getting log path parameter
+    log_param = args_dict['log']
+
     # running function
     execute_multiple_commands(path_to_commands_txt=commands,
-                              enter_param=enter_param)
+                              enter_param=enter_param,
+                              log_path=log_param)
 
 ######################################################################
 # running main function
